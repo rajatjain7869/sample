@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.retrofitapihit"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        aajtak {
+            // Assigns this product flavor to the "version" flavor dimension.
+            // This property is optional if you are using only one dimension.
+            //dimension "version"
+            applicationIdSuffix ".aajtak"
+//            versionNameSuffix "-demo"
+        }
+        indiatv {
+//            dimension "version"
+            applicationIdSuffix ".indiatv"
+//            versionNameSuffix "-full"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            applicationIdSuffix ".debug"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation project(':core')
+}
