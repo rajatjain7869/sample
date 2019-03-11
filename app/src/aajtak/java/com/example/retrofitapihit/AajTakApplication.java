@@ -4,11 +4,9 @@ import com.example.core.application.BaseApplication;
 import com.example.core.network.INewsSevice;
 import com.example.retrofitapihit.service.NewsApiService;
 
-import javax.inject.Inject;
-
 public class AajTakApplication extends BaseApplication {
-    @Inject
-    NewsApiService apiService;
+//    @Inject
+//    NewsApiService apiService;
 
     @Override
     public void onCreate() {
