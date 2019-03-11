@@ -7,21 +7,25 @@ import com.example.retrofitapihit.AajTakApplication;
 import com.example.retrofitapihit.mapper.NewsMapper;
 import com.example.retrofitapihit.model.NewsList;
 
-import dagger.Module;
+import javax.inject.Inject;
+
 import dagger.Provides;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-@Module
+
 public class NewsApiService implements INewsSevice {
+    @Inject
+    public NewsApiService() {
+
+    }
 
     @Override
-    @Provides
+
     public void getNewsList(final IDataListener listener) {
         AajTakApplication.getInstance().getService()
                 .create(NewsService.class).getNewsList().enqueue(new Callback<NewsList>() {
             @Override
-            @Provides
             public void onResponse(Call<NewsList> call, Response<NewsList> response) {
                 NewsList list = response.body();
                 NewsListViewModel vm = new NewsMapper().convertModelToViewMOdel(list);
