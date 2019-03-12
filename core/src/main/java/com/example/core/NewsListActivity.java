@@ -31,7 +31,8 @@ public class NewsListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CoreComponent coreComponent = DaggerCoreComponent.builder().newsModule(new NewsModule(BaseApplication.getInstance().getApi())).build();
+        CoreComponent coreComponent = DaggerCoreComponent.builder().
+                newsModule(new NewsModule(BaseApplication.getInstance().getApi())).build();
         coreComponent.inject(this);
 //        BaseComponent baseComponent=DaggerBaseCompon
         //ap.inject(this);

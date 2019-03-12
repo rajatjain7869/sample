@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">core</string>
-    <string name="title_activity_news_list">NewsListActivity</string>
+    <string name="title_activity_news_list">News</string>
 </resources>
