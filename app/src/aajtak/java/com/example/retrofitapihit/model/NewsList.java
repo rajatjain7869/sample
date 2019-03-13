@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class NewsList {
 
-    @SerializedName("notice_list")
+    @SerializedName("articles")
     private ArrayList<News> newsList;
 
     public ArrayList<News> getNewsList() {

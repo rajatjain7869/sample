@@ -1,15 +1,19 @@
 package com.example.core.viewmodel;
 
 import android.databinding.BaseObservable;
-import android.databinding.Bindable;
+import android.databinding.BindingAdapter;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.core.application.BaseApplication;
 
 public class NewsViewModel extends BaseObservable {
 
     private String title;
     private String descriptionUrl;
-    private String image;
+    private String imageUrl;
     private String date;
     private String viewCount;
 
@@ -29,12 +33,28 @@ public class NewsViewModel extends BaseObservable {
         this.descriptionUrl = descriptionUrl;
     }
 
-    public String getImage() {
-        return image;
+
+    @BindingAdapter("image")
+    public static void loadImage(ImageView view, String imageUrl) {
+        if (imageUrl == null || imageUrl.isEmpty()) {
+            imageUrl = "https://images.immedia.com.br//32/32623_2_L.jpg";
+        }
+        Log.d("Image", imageUrl);
+        BaseApplication.getInstance().getImageLoader().loadImage(view.getContext(),
+                view, imageUrl);
+
+
+        //Picasso.with(view.getContext()).load(imageUrl).placeholder(R.drawable.ic_launcher).into(view);
+
     }
 
-    public void setImage(String image) {
-        this.image = image;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getDate() {

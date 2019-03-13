@@ -4,28 +4,32 @@ import com.google.gson.annotations.SerializedName;
 
 public class News {
 
-    @SerializedName("id")
-    private String id;
+
+    @SerializedName("author")
+    private String author;
     @SerializedName("title")
     private String title;
-    @SerializedName("brief")
-    private String brief;
-    @SerializedName("filesource")
-    private String fileSource;
+    @SerializedName("description")
+    private String description;
+    @SerializedName("url")
+    private String url;
+    @SerializedName("urlToImage")
+    private String urlToImage;
+    @SerializedName("publishedAt")
+    private String publishedAt;
+    @SerializedName("content")
+    private String content;
 
-    public News(String id, String title, String brief, String fileSource) {
-        this.id = id;
-        this.title = title;
-        this.brief = brief;
-        this.fileSource = fileSource;
+    public String getAuthor() {
+        return author;
     }
 
-    public String getId() {
-        return id;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getDescription() {
+        return description;
     }
 
     public String getTitle() {
@@ -36,20 +40,62 @@ public class News {
         this.title = title;
     }
 
-    public String getBrief() {
-        return brief;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setBrief(String brief) {
-        this.brief = brief;
+    public String getUrl() {
+        return url;
     }
 
-    public String getFileSource() {
-        return fileSource;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public void setFileSource(String fileSource) {
-        this.fileSource = fileSource;
+    public String getUrlToImage() {
+        return urlToImage;
     }
 
+    public void setUrlToImage(String urlToImage) {
+        this.urlToImage = urlToImage;
+    }
+
+    public String getPublishedAt() {
+        return publishedAt;
+    }
+
+    public void setPublishedAt(String publishedAt) {
+        this.publishedAt = publishedAt;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public class Source {
+        @SerializedName("id")
+        private String id;
+        @SerializedName("name")
+        private String name;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
 }

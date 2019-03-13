@@ -18,7 +18,7 @@ public class AajTakApplication extends BaseApplication {
 
     @Override
     public String getBaseUrl() {
-        return "https://api.myjson.com/";
+        return "https://newsapi.org";
     }
 
     @Override

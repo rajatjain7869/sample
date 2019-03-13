@@ -19,8 +19,8 @@ public class NewsMapper implements IMapper<NewsList, NewsListViewModel> {
             for(News news : newsList.getNewsList()) {
                 NewsViewModel vm = new NewsViewModel();
                 vm.setTitle(TextUtils.isEmpty(news.getTitle()) ? "" : news.getTitle());
-                vm.setDescriptionUrl(news.getBrief());
-                vm.setImage(news.getFileSource());
+                vm.setDescriptionUrl(news.getDescription());
+                vm.setImageUrl(news.getUrlToImage());
                 vm.setDate("12-12-2012");
                 vm.setViewCount("150");
                 viewModel.setModel(vm);
