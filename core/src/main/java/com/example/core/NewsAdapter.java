@@ -12,18 +12,12 @@ import com.example.core.viewmodel.NewsViewModel;
 import java.util.List;
 
 public class NewsAdapter extends BaseRecyclerViewAdapter<NewsViewModel, NewsAdapter.NewsViewHolder> {
+    private List<NewsViewModel> dataList;
+
     public NewsAdapter(List items, Context context) {
         super(items, context);
         dataList = items;
     }
-
-
-    private List<NewsViewModel> dataList;
-
-//
-//   // public NewsAdapter(List<NewsViewModel> dataList) {
-//        this.dataList = dataList;
-//    }
 
     @Override
     public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -38,13 +32,9 @@ public class NewsAdapter extends BaseRecyclerViewAdapter<NewsViewModel, NewsAdap
     @Override
     public void onBindViewHolder(@NonNull NewsViewHolder newsViewHolder, int i) {
         newsViewHolder.rowBinding.setModel(dataList.get(i));
+
     }
 
-/*
-    @Override
-    public void onBindViewHolder(final NewsViewHolder holder, int position) {
-        holder.rowBinding.setModel(dataList.get(position));
-    }*/
 
     @Override
     public int getItemCount() {
@@ -58,6 +48,5 @@ public class NewsAdapter extends BaseRecyclerViewAdapter<NewsViewModel, NewsAdap
             super(itemBinding.getRoot());
             this.rowBinding = itemBinding;
         }
-
     }
 }

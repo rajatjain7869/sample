@@ -2,6 +2,7 @@ package com.example.core;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
@@ -54,6 +55,7 @@ public class NewsListActivity extends AppCompatActivity {
         adapter = new NewsAdapter(models, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(NewsListActivity.this);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 //        adapter.getItem();
     }

@@ -43,9 +43,6 @@ public class NewsViewModel extends BaseObservable {
         BaseApplication.getInstance().getImageLoader().loadImage(view.getContext(),
                 view, imageUrl);
 
-
-        //Picasso.with(view.getContext()).load(imageUrl).placeholder(R.drawable.ic_launcher).into(view);
-
     }
 
 
