@@ -57,7 +57,7 @@ public class NewsListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
-//        adapter.getItem();
+
     }
 
 }
