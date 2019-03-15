@@ -7,8 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
+import com.example.core.adapter.BaseAdapter;
 import com.example.core.application.BaseApplication;
 import com.example.core.application.BaseNews;
+import com.example.core.binding.ItemBinderBase;
 import com.example.core.di.CoreComponent;
 import com.example.core.di.DaggerCoreComponent;
 import com.example.core.modules.NewsModule;
@@ -21,8 +23,9 @@ import java.util.List;
 import javax.inject.Inject;
 
 public class NewsListActivity extends AppCompatActivity {
+
     private RecyclerView recyclerView;
-    private NewsAdapter adapter;
+
     @Inject
     BaseNews baseNews;
 
@@ -52,12 +55,12 @@ public class NewsListActivity extends AppCompatActivity {
     private void generateNoticeList(List<NewsViewModel> models) {
 
         recyclerView = findViewById(R.id.recycler_view_notice_list);
-        adapter = new NewsAdapter(models, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(NewsListActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(new BaseAdapter<NewsViewModel>(new ItemBinderBase<NewsViewModel>(BR.model, R.layout.single_row_view), models));
 
     }
+
 
 }
